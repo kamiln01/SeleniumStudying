@@ -1,14 +1,22 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.Test;
 
 public class SeleniumTest {
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
+    @Test
+    public void openGooglePage() {
+        WebDriver driver = getDriver("chrome");
+        driver.get("https://www.google.com");
     }
 
-    @Test
-    public void SampleTest() {
-        System.out.println("Hello!");
+    public WebDriver getDriver(String browser) {
+        return switch (browser) {
+            case "chrome" -> new ChromeDriver();
+            case "firefox" -> new FirefoxDriver();
+            case "ie" -> new InternetExplorerDriver();
+            default -> throw new IllegalArgumentException("unsupportedBrowserType: " + browser);
+        };
     }
 }
