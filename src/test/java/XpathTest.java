@@ -42,7 +42,7 @@ public class XpathTest {
         driver.findElement(secondElement);
 
         By lastElement = By.xpath("(//input)[last()]");
-        driver.findElement(secondElement);
+        driver.findElement(lastElement);
 
         By elementWithAttribute = By.xpath("//*[@name]");
         driver.findElements(elementWithAttribute);
@@ -58,5 +58,31 @@ public class XpathTest {
         driver.findElement(attrCont);
         driver.findElement(startsWith);
         driver.findElement(endsWith);
+
+        By child = By.xpath("//div/child::ul");
+        By desc = By.xpath("//div/descendant::ul");
+        By parrent = By.xpath("//div/../..");
+        By asc = By.xpath("//div/ancestor::*");
+        By foll = By.xpath("//img/following::*");
+        By follSib = By.xpath("//img/following-sibling::*");
+        By prec = By.xpath("//img/preceding::*");
+        By precSib = By.xpath("//img/preceding-sibling::*");
+
+        driver.findElement(child);
+        driver.findElement(desc);
+        driver.findElement(parrent);
+        driver.findElement(asc);
+        driver.findElement(foll);
+        driver.findElement(follSib);
+        driver.findElement(prec);
+        driver.findElement(precSib);
+
+        By divsAndLinks = By.xpath("//a | //div");
+        By andOp = By.xpath("//input[@name='fname' and @id='fname']");
+        By orOp = By.xpath("//input[@name='fname' or @id='fnam']");
+
+        driver.findElement(divsAndLinks);
+        driver.findElement(andOp);
+        driver.findElement(orOp);
     }
 }
