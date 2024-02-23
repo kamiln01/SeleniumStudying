@@ -34,5 +34,18 @@ public class XpathTest {
 
         By shortPath = By.xpath("//ul");
         driver.findElement(shortPath);
+
+        By allXpath = By.xpath("//*");
+        driver.findElement(allXpath);
+
+        By secondElement = By.xpath("(//input)[2]");
+        driver.findElement(secondElement);
+
+        By lastElement = By.xpath("(//input)[last()]");
+        driver.findElement(secondElement);
+
+        By elementWithAttribute = By.xpath("//*[@name]");
+        driver.findElements(elementWithAttribute);
+
     }
 }
