@@ -28,10 +28,12 @@ public class DifferentElements {
 
         By inputLocator = By.tagName("input");
         WebElement input = driver.findElement(inputLocator);
-        input.sendKeys("Pierwszy");
+        input.sendKeys("First input");
         List<WebElement> inputs = driver.findElements(inputLocator);
         System.out.println("Number of inputs on website: " + inputs.size());
 
+        driver.findElement(By.linkText("Visit W3Schools.com!"));
+        driver.findElement(By.partialLinkText("Visit"));
 
 
 
