@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class CSssSelectorsTest {
+public class CssSelectorsTest {
     @Test
     public void findElements() {
         WebDriver driver = new ChromeDriver();
@@ -55,6 +55,12 @@ public class CSssSelectorsTest {
         driver.findElement(attrStartsWith);
         driver.findElement(attrEndsWith);
 
+        By firstChild = By.cssSelector("li:first-child");
+        By lastChild = By.cssSelector("li:last-child");
+        By thirdChild = By.cssSelector("li:nth-child(3)");
 
+        driver.findElement(firstChild);
+        driver.findElement(lastChild);
+        driver.findElement(thirdChild);
     }
 }
