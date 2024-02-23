@@ -24,5 +24,25 @@ public class CSssSelectorsTest {
         driver.findElement(By.cssSelector("[type='text']"));
 
         driver.findElement(By.cssSelector("[class='topSecret']"));
+
+        By ulInDiv = By.cssSelector("div ul");
+        By trInTable = By.cssSelector("table tr");
+        By trInBody = By.cssSelector("tbody tr");
+
+        driver.findElement(ulInDiv);
+        driver.findElement(trInTable);
+        driver.findElement(trInBody);
+
+        By firstChildUlInDiv = By.cssSelector("div > ul");
+        By firstChildTrInTbody = By.cssSelector("tbody > tr");
+
+        driver.findElement(firstChildUlInDiv);
+        driver.findElement(firstChildTrInTbody);
+
+        By firstFormAfterLabel = By.cssSelector("label + form");
+        By allFormAfterLabel = By.cssSelector("label ~ form");
+
+        driver.findElement(firstFormAfterLabel);
+        driver.findElement(allFormAfterLabel);
     }
 }
