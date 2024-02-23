@@ -44,5 +44,17 @@ public class CSssSelectorsTest {
 
         driver.findElement(firstFormAfterLabel);
         driver.findElement(allFormAfterLabel);
+
+        By attrTag = By.cssSelector("input[name='fname']");
+        By attrContains = By.cssSelector("input[name*='name']");
+        By attrStartsWith = By.cssSelector("input[name^='user']");
+        By attrEndsWith = By.cssSelector("input[name$='name']");
+
+        driver.findElement(attrTag);
+        driver.findElement(attrContains);
+        driver.findElement(attrStartsWith);
+        driver.findElement(attrEndsWith);
+
+
     }
 }
