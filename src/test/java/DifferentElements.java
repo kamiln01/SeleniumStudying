@@ -34,8 +34,5 @@ public class DifferentElements {
 
         driver.findElement(By.linkText("Visit W3Schools.com!"));
         driver.findElement(By.partialLinkText("Visit"));
-
-
-
     }
 }
